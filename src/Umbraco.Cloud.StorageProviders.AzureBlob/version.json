@@ -1,0 +1,7 @@
+{
+    "version": "4.0",
+    "nugetPackageVersion": {
+        "semVer": 2
+    },
+    "pathFilters": ["."]
+}
