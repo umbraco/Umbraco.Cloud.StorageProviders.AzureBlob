@@ -19,12 +19,17 @@ namespace Umbraco.Cloud.StorageProviders.AzureBlob
             builder.AddAzureBlobMediaFileSystem();
 
             var configuration = new ConfigurationBuilder()
-                .AddJsonFile("umbraco-cloud.json", true, true)
-                .AddEnvironmentVariables("UMBRACO:CLOUD:")
+                .AddEnvironmentVariables("Umbraco:Cloud:")
                 .Build();
 
             builder.Services.Configure<AzureBlobFileSystemOptions>(AzureBlobFileSystemOptions.MediaFileSystemName,
-                configuration.GetSection("Storage:AzureBlob").Bind);
+                options =>
+                {
+                    var section = configuration.GetSection("Storage:AzureBlob");
+
+                    options.ConnectionString = $"BlobEndpoint={section["Endpoint"]};SharedAccessSignature={section["SharedAccessSignature"]}";
+                    options.ContainerName = section["ContainerName"];
+                });
 
             builder.Services.Configure<UmbracoPipelineOptions>(options =>
             {
