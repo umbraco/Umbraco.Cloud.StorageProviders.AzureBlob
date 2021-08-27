@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EEC243CE-EF50-4E06-8B76-ACFD77161D7C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Cloud.StorageProviders.AzureBlob", "src\Umbraco.Cloud.StorageProviders.AzureBlob\Umbraco.Cloud.StorageProviders.AzureBlob.csproj", "{DD4F5091-4EAB-4863-95EB-6143FD3A241C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umbraco.Cloud.StorageProviders.AzureBlob", "src\Umbraco.Cloud.StorageProviders.AzureBlob\Umbraco.Cloud.StorageProviders.AzureBlob.csproj", "{DD4F5091-4EAB-4863-95EB-6143FD3A241C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{DD4F5091-4EAB-4863-95EB-6143FD3A241C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -33,7 +28,10 @@ Global
 		{DD4F5091-4EAB-4863-95EB-6143FD3A241C}.Release|x86.ActiveCfg = Release|Any CPU
 		{DD4F5091-4EAB-4863-95EB-6143FD3A241C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{DD4F5091-4EAB-4863-95EB-6143FD3A241C} = {EEC243CE-EF50-4E06-8B76-ACFD77161D7C}
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {019DE032-AEE1-4803-BBAD-3595E4347425}
 	EndGlobalSection
 EndGlobal
