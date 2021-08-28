@@ -19,13 +19,13 @@ namespace Umbraco.Cloud.StorageProviders.AzureBlob
         {
             if (builder == null) throw new ArgumentNullException(nameof(builder));
 
-            // Do a quick check to see if we're running on Umbraco Cloud
-            var environment = Environment.GetEnvironmentVariable("UMBRACO__CLOUD__ENVIRONMENT");
-            if (string.IsNullOrEmpty(environment)) return;
-
             var configuration = new ConfigurationBuilder()
                 .AddEnvironmentVariables("Umbraco:Cloud:")
                 .Build();
+
+            // Only configure when running on Umbraco Cloud with valid options
+            var isRunningOnCloud = configuration.GetValue<bool>("IsRunningOnCloud");
+            if (isRunningOnCloud == false) return;
 
             // Get options and manually validate (no need to register them into DI)
             var azureBlobOptions = configuration.GetSection("Storage:AzureBlob").Get<AzureBlobOptions>();
