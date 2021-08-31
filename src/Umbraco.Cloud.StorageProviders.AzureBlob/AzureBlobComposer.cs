@@ -1,35 +1,41 @@
 using System;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Web.Common.ApplicationBuilder;
-using Umbraco.StorageProviders.AzureBlob;
 
 namespace Umbraco.Cloud.StorageProviders.AzureBlob
 {
+    /// <summary>
+    /// Automatically configures Azure Blob Storage for use on Umbraco Cloud.
+    /// </summary>
+    /// <seealso cref="Umbraco.Cms.Core.Composing.IComposer" />
     public class AzureBlobComposer : IComposer
     {
+        /// <inheritdoc />
         public void Compose(IUmbracoBuilder builder)
         {
             if (builder == null) throw new ArgumentNullException(nameof(builder));
-
-            if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("UMBRACO__CLOUD__ENVIRONMENT"))) return;
-
-            builder.AddAzureBlobMediaFileSystem();
 
             var configuration = new ConfigurationBuilder()
                 .AddEnvironmentVariables("Umbraco:Cloud:")
                 .Build();
 
-            builder.Services.Configure<AzureBlobFileSystemOptions>(AzureBlobFileSystemOptions.MediaFileSystemName,
-                options =>
-                {
-                    var section = configuration.GetSection("Storage:AzureBlob");
+            // Get options and manually validate (no need to add them to the service collection)
+            var azureBlobOptions = configuration.GetSection("Storage:AzureBlob").Get<AzureBlobOptions>();
+            if (azureBlobOptions == null) return;
 
-                    options.ConnectionString = $"BlobEndpoint={section["Endpoint"]};SharedAccessSignature={section["SharedAccessSignature"]}";
-                    options.ContainerName = section["ContainerName"];
-                });
+            var validateResult = new DataAnnotationValidateOptions<AzureBlobOptions>(null).Validate(null, azureBlobOptions);
+            if (validateResult.Failed) return;
+
+            // Configure Azure Blob Storage
+            builder.AddAzureBlobMediaFileSystem(options =>
+            {
+                options.ConnectionString = azureBlobOptions.ConnectionString;
+                options.ContainerName = azureBlobOptions.ContainerName;
+            });
 
             builder.Services.Configure<UmbracoPipelineOptions>(options =>
             {
