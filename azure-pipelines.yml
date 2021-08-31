@@ -87,8 +87,9 @@ stages:
                       Contents: '*.nupkg'
                       TargetFolder: $(build.artifactstagingdirectory)
                       CleanTargetFolder: true
-                      
+
                 - task: DotNetCoreCLI@2
+                  displayName: Push to Internal Nuget feed
                   inputs:
                     command: 'push'
                     packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
