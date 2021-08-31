@@ -23,11 +23,7 @@ namespace Umbraco.Cloud.StorageProviders.AzureBlob
                 .AddEnvironmentVariables("Umbraco:Cloud:")
                 .Build();
 
-            // Only configure when running on Umbraco Cloud with valid options
-            var isRunningOnCloud = configuration.GetValue<bool>("IsRunningOnCloud");
-            if (isRunningOnCloud == false) return;
-
-            // Get options and manually validate (no need to register them into DI)
+            // Get options and manually validate (no need to add them to the service collection)
             var azureBlobOptions = configuration.GetSection("Storage:AzureBlob").Get<AzureBlobOptions>();
             if (azureBlobOptions == null) return;
 
