@@ -4,7 +4,7 @@
         <Nullable>enable</Nullable>
         <AnalysisMode>AllEnabledByDefault</AnalysisMode>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <description>Azure blob storage plugin for Umbraco Cloud</description>
+        <Description>Azure Blob Storage provider for Umbraco Cloud</Description>
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="SonarAnalyzer.CSharp" Version="8.27.0.35380" PrivateAssets="all" />
