@@ -8,6 +8,6 @@
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="SonarAnalyzer.CSharp" Version="8.27.0.35380" PrivateAssets="all" />
-        <PackageReference Include="Umbraco.StorageProviders.AzureBlob" Version="1.0.0-rc001" />
+        <PackageReference Include="Umbraco.StorageProviders.AzureBlob" Version="1.0.0-preview20210914.72327" />
     </ItemGroup>
 </Project>
