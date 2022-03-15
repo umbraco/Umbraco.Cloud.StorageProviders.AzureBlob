@@ -1,10 +1,8 @@
 # Umbraco.Cloud.StorageProviders.AzureBlob
 
-Umbraco Cloud Azure Blob Storage Provider
+Azure Blob Storage file system provider for Umbraco Cloud.
 
-## Azure Blob
-
-Contains Umbraco Cloud specific code for the [Umbraco Azure Blob Storage Provider](https://github.com/umbraco/Umbraco.StorageProviders).
+Contains Umbraco Cloud specific code for the [Azure Blob Storage provider](https://github.com/umbraco/Umbraco.StorageProviders).
 
 ## Bugs, issues and Pull Requests
 

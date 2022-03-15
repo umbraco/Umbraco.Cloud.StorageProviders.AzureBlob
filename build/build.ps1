@@ -44,11 +44,6 @@
     $src = "$($this.SolutionRoot)\src"
     $log = "$($this.BuildTemp)\dotnet.build.umbraco.log"
 
-    if ($this.BuildEnv.VisualStudio -eq $null)
-    {
-      throw "Build environment does not provide VisualStudio."
-    }
-
     Write-Host "Compile Umbraco.Cloud.StorageProviders.AzureBlob"
     Write-Host "Logging to $log"
 
@@ -73,7 +68,6 @@
 
     # /p:UmbracoBuild tells the csproj that we are building from PS, not VS
   })
-
 
   $ubuild.DefineMethod("PreparePackages",
   {
