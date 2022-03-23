@@ -1,10 +1,8 @@
 using System;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Cms.Web.Common.ApplicationBuilder;
 
 namespace Umbraco.Cloud.StorageProviders.AzureBlob
 {
@@ -40,14 +38,6 @@ namespace Umbraco.Cloud.StorageProviders.AzureBlob
             {
                 options.ConnectionString = azureBlobOptions.ConnectionString;
                 options.ContainerName = azureBlobOptions.ContainerName;
-            });
-
-            builder.Services.Configure<UmbracoPipelineOptions>(options =>
-            {
-                options.AddFilter(new UmbracoPipelineFilter("AzureBlob")
-                {
-                    Endpoints = app => app.UseAzureBlobMediaFileSystem()
-                });
             });
         }
     }
