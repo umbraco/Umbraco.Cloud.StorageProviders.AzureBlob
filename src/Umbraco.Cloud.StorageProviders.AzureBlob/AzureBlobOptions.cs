@@ -1,11 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Umbraco.Cloud.StorageProviders.AzureBlob
 {
     /// <summary>
     /// The Azure Blob options used on Umbraco Cloud.
     /// </summary>
-    internal class AzureBlobOptions
+    [SuppressMessage("Performance", "CA1812:Avoid uninstantiated internal classes", Justification = "Used in configuration binding.")]
+    internal sealed class AzureBlobOptions
     {
         /// <summary>
         /// Gets or sets the endpoint.
