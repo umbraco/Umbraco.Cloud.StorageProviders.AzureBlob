@@ -17,10 +17,7 @@ namespace Umbraco.Cloud.StorageProviders.AzureBlob
         {
             if (builder == null) throw new ArgumentNullException(nameof(builder));
 
-            /* There's a bug in Microsoft.Extensions.Configuration.EnvironmentVariables @ 6.0.0 WRT env var normalization + AddEnvironmentVariables(prefix) 
-             * See https://github.com/dotnet/runtime/pull/62916, should be resolved upstream in https://github.com/dotnet/runtime/milestone/87
-             * Until then, safest thing to do is explicitly add environment variables using both prefixes.
-             * (otherwise there are issues when folks update TFM to net6) */
+            // There was a bug with normalizing prefixes in .NET 6 (fixed in 6.0.2), so safest thing is to add both prefixes until the TFM is updated to net7.0
             var configuration = new ConfigurationBuilder()
                 .AddEnvironmentVariables("Umbraco:Cloud:")
                 .AddEnvironmentVariables("Umbraco__Cloud__")
