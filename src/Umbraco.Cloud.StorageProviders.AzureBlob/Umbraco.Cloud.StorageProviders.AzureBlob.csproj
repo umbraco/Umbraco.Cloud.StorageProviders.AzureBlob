@@ -8,6 +8,6 @@
         <PackageTags>umbraco cloud storage azure blob</PackageTags>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Umbraco.StorageProviders.AzureBlob" Version="2.0.0-alpha-gfada1d18f0" IncludeAssets="compile" />
+        <PackageReference Include="Umbraco.StorageProviders.AzureBlob" Version="2.0.0-rc1" />
     </ItemGroup>
 </Project>

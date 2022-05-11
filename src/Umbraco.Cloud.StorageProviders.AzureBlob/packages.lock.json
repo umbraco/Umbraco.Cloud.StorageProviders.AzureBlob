@@ -23,14 +23,14 @@
       },
       "Umbraco.StorageProviders.AzureBlob": {
         "type": "Direct",
-        "requested": "[2.0.0-alpha-gfada1d18f0, )",
-        "resolved": "2.0.0-alpha-gfada1d18f0",
-        "contentHash": "IU7h1QKZ5YFZ81m2XuQ9OWQp3TW9Gu0Jo/T9R5G48Vl+HV9+R6ppIVEbS1akY5zS0gqNRKpHtKzl12zJSVdzqw==",
+        "requested": "[2.0.0-rc1, )",
+        "resolved": "2.0.0-rc1",
+        "contentHash": "f+/ur1dgsOxaK05t0/6BBHsKda3kHamb0QxLw/DQ8cn6NLnIol4UDQyq59JQGEjgb2pWkB1ePRBkY5oZueBGHA==",
         "dependencies": {
           "Azure.Storage.Blobs": "12.12.0",
           "SixLabors.ImageSharp.Web.Providers.Azure": "2.0.0",
           "Umbraco.Cms.Web.Common": "10.0.0-rc1",
-          "Umbraco.StorageProviders": "2.0.0-alpha-gfada1d18f0"
+          "Umbraco.StorageProviders": "2.0.0-rc1"
         }
       },
       "Azure.Core": {
@@ -2305,8 +2305,8 @@
       },
       "Umbraco.StorageProviders": {
         "type": "Transitive",
-        "resolved": "2.0.0-alpha-gfada1d18f0",
-        "contentHash": "KGjbzATmOlsLRA5Ezj+LGPRtk5ZN/EQRNNQYpwajo2gIZU6T/KUg2qOFsXfGB3hE92IkOxmCNYppa9yF3NEuWg==",
+        "resolved": "2.0.0-rc1",
+        "contentHash": "cL21Q7qb0MgLGPl7zG+Kky3VZQcXeN18PMNPIpbdFTGZ3IHzStNOJYrQoAVs6tAA/cyBDvyB8ftPChDLI+hNWQ==",
         "dependencies": {
           "Umbraco.Cms.Web.Common": "10.0.0-rc1"
         }
