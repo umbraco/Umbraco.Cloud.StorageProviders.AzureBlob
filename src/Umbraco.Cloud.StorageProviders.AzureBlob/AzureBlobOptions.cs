@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Umbraco.Cloud.StorageProviders.AzureBlob
 {
     /// <summary>
     /// The Azure Blob options used on Umbraco Cloud.
     /// </summary>
+    [SuppressMessage("Performance", "CA1812:Avoid uninstantiated internal classes", Justification = "Used in configuration binding.")]
     internal class AzureBlobOptions
     {
         /// <summary>

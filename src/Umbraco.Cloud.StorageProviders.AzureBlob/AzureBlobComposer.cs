@@ -15,7 +15,10 @@ namespace Umbraco.Cloud.StorageProviders.AzureBlob
         /// <inheritdoc />
         public void Compose(IUmbracoBuilder builder)
         {
-            if (builder == null) throw new ArgumentNullException(nameof(builder));
+            if (builder == null)
+            {
+                throw new ArgumentNullException(nameof(builder));
+            }
 
             // There was a bug with normalizing prefixes in .NET 6 (fixed in 6.0.2), so safest thing is to add both prefixes until the TFM is updated to net7.0
             var configuration = new ConfigurationBuilder()
@@ -25,10 +28,16 @@ namespace Umbraco.Cloud.StorageProviders.AzureBlob
 
             // Get options and manually validate (no need to add them to the service collection)
             var azureBlobOptions = configuration.GetSection("Storage:AzureBlob").Get<AzureBlobOptions>();
-            if (azureBlobOptions == null) return;
+            if (azureBlobOptions == null)
+            {
+                return;
+            }
 
             var validateResult = new DataAnnotationValidateOptions<AzureBlobOptions>(null).Validate(null, azureBlobOptions);
-            if (validateResult.Failed) return;
+            if (validateResult.Failed)
+            {
+                return;
+            }
 
             // Configure Azure Blob Storage
             builder.AddAzureBlobMediaFileSystem(options =>
