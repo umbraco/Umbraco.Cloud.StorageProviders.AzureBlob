@@ -1,0 +1,53 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Company>Umbraco HQ</Company>
+    <Authors>Umbraco</Authors>
+    <Copyright>Copyright © Umbraco $([System.DateTime]::Today.ToString('yyyy'))</Copyright>
+    <Product>Umbraco Cloud Storage Providers</Product>
+    <PackageProjectUrl>https://github.com/umbraco/Umbraco.Cloud.StorageProviders.AzureBlob</PackageProjectUrl>
+    <PackageIconUrl>https://umbraco.com/dist/nuget/logo-small.png</PackageIconUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageTags>umbraco cloud storage</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <WarningsAsErrors>Nullable</WarningsAsErrors>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AnalysisMode>All</AnalysisMode>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Nerdbank.GitVersioning" PrivateAssets="all" />
+    <PackageReference Include="StyleCop.Analyzers" PrivateAssets="all" />
+    <PackageReference Include="Umbraco.Code" PrivateAssets="all" />
+    <PackageReference Include="Umbraco.GitVersioning.Extensions" PrivateAssets="all" />
+  </ItemGroup>
+
+  <!-- NuGet packages lock -->
+  <PropertyGroup>
+    <DisableImplicitNuGetFallbackFolder>true</DisableImplicitNuGetFallbackFolder>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <DefaultItemExcludes>$(DefaultItemExcludes);packages.lock.json</DefaultItemExcludes>
+  </PropertyGroup>
+
+  <!-- SourceLink -->
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)icon.png" Pack="true" PackagePath="" Visible="false" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <GitVersionBaseDirectory>$(MSBuildThisFileDirectory)</GitVersionBaseDirectory>
+  </PropertyGroup>
+</Project>

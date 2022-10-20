@@ -1,13 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
-        <Nullable>enable</Nullable>
-        <AnalysisMode>All</AnalysisMode>
-        <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <Description>Azure Blob Storage provider for Umbraco Cloud</Description>
-        <PackageTags>umbraco cloud storage azure blob</PackageTags>
-    </PropertyGroup>
-    <ItemGroup>
-        <PackageReference Include="Umbraco.StorageProviders.AzureBlob" Version="10.0.0" />
-    </ItemGroup>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Title>Umbraco Cloud Storage Providers - Azure Blob Storage</Title>
+    <Description>Azure Blob Storage provider for Umbraco Cloud.</Description>
+    <PackageTags>umbraco cloud storage azure blob</PackageTags>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Umbraco.StorageProviders.AzureBlob" />
+  </ItemGroup>
 </Project>
