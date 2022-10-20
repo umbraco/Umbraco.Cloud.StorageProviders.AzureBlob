@@ -16,10 +16,8 @@ public sealed class AzureBlobComposer : IComposer
     {
         ArgumentNullException.ThrowIfNull(builder);
 
-        // There was a bug with normalizing prefixes in .NET 6 (fixed in 6.0.2), so safest thing is to add both prefixes until the TFM is updated to net7.0
         var configuration = new ConfigurationBuilder()
             .AddEnvironmentVariables("Umbraco:Cloud:")
-            .AddEnvironmentVariables("Umbraco__Cloud__")
             .Build();
 
         // Get options and manually validate (no need to add them to the service collection)
