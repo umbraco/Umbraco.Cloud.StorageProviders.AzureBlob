@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Umbraco.Cloud.StorageProviders.AzureBlob;
+namespace Umbraco.Cloud.StorageProviders.AzureBlob.Core;
 
 /// <summary>
 /// The Azure Blob options used on Umbraco Cloud.

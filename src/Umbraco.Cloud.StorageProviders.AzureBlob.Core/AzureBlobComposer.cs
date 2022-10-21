@@ -3,7 +3,7 @@ using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace Umbraco.Cloud.StorageProviders.AzureBlob;
+namespace Umbraco.Cloud.StorageProviders.AzureBlob.Core;
 
 /// <summary>
 /// Automatically configures Azure Blob Storage for use on Umbraco Cloud.

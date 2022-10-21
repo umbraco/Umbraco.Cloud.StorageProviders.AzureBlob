@@ -1,8 +1,9 @@
+using Umbraco.Cloud.StorageProviders.AzureBlob.Core;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.StorageProviders.AzureBlob.IO;
 
-namespace Umbraco.Cloud.StorageProviders.AzureBlob;
+namespace Umbraco.Cloud.StorageProviders.AzureBlob.ImageSharp;
 
 /// <summary>
 /// Automatically configures ImageSharp support using the Azure Blob Storage for use on Umbraco Cloud.

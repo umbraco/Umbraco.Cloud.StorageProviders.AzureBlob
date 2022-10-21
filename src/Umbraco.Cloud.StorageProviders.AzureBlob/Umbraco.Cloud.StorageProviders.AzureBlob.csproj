@@ -1,10 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Title>Umbraco Cloud Storage Providers - Azure Blob Storage</Title>
-    <Description>Azure Blob Storage provider for Umbraco Cloud.</Description>
+    <Description>Azure Blob Storage provider for Umbraco Cloud with all default dependencies.</Description>
     <PackageTags>umbraco cloud storage azure blob</PackageTags>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <IncludeSymbols>false</IncludeSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Umbraco.StorageProviders.AzureBlob" />
+    <ProjectReference Include="..\Umbraco.Cloud.StorageProviders.AzureBlob.Core\Umbraco.Cloud.StorageProviders.AzureBlob.Core.csproj" />
+    <ProjectReference Include="..\Umbraco.Cloud.StorageProviders.AzureBlob.ImageSharp\Umbraco.Cloud.StorageProviders.AzureBlob.ImageSharp.csproj" />
   </ItemGroup>
 </Project>
