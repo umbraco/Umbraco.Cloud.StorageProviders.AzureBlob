@@ -7,4 +7,9 @@
   <ItemGroup>
     <PackageReference Include="Umbraco.StorageProviders.AzureBlob" />
   </ItemGroup>
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>Umbraco.Cloud.StorageProviders.AzureBlob.ImageSharp</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
 </Project>
