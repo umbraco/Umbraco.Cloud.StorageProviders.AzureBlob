@@ -10,4 +10,12 @@
     <ProjectReference Include="..\Umbraco.Cloud.StorageProviders.AzureBlob.Core\Umbraco.Cloud.StorageProviders.AzureBlob.Core.csproj" />
     <ProjectReference Include="..\Umbraco.Cloud.StorageProviders.AzureBlob.ImageSharp\Umbraco.Cloud.StorageProviders.AzureBlob.ImageSharp.csproj" />
   </ItemGroup>
+  
+  <!-- Create and pack empty file to add TFM dependency -->
+  <Target Name="GetTargetFrameworkPackageFiles" BeforeTargets="GenerateNuspec">
+    <WriteLinesToFile File="$(IntermediateOutputPath)_._" />
+    <ItemGroup>
+      <_PackageFiles Include="$(IntermediateOutputPath)_._" PackagePath="lib\$(TargetFramework)" />
+    </ItemGroup>
+  </Target>
 </Project>
