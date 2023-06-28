@@ -10,7 +10,7 @@
     <GlobalPackageReference Include="Umbraco.GitVersioning.Extensions" Version="0.2.0" />
   </ItemGroup>
   <ItemGroup>
-    <PackageVersion Include="Umbraco.StorageProviders.AzureBlob" Version="[12.0.0-rc3, 13)" />
-    <PackageVersion Include="Umbraco.StorageProviders.AzureBlob.ImageSharp" Version="[12.0.0-rc3, 13)" />
+    <PackageVersion Include="Umbraco.StorageProviders.AzureBlob" Version="[12.0.0, 13)" />
+    <PackageVersion Include="Umbraco.StorageProviders.AzureBlob.ImageSharp" Version="[12.0.0, 13)" />
   </ItemGroup>
 </Project>
