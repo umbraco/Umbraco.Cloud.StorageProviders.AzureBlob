@@ -12,6 +12,20 @@ namespace Umbraco.Cloud.StorageProviders.AzureBlob;
 /// <seealso cref="Umbraco.Cms.Core.Composing.IComposer" />
 public sealed class AzureBlobComposer : IComposer
 {
+    /// <summary>
+    /// A delegate that is invoked when Azure Blob Storage is configured.
+    /// </summary>
+    /// <param name="azureBlobOptions">The Azure Blob options.</param>
+    public delegate void ConfigureAzureBlobOptions(AzureBlobOptions azureBlobOptions);
+
+    /// <summary>
+    /// Gets or sets the delegate to invoke when Azure Blob Storage is configured.
+    /// </summary>
+    /// <value>
+    /// The delegate that configures additional services.
+    /// </value>
+    public static ConfigureAzureBlobOptions? Configure { get; set; }
+
     /// <inheritdoc />
     public void Compose(IUmbracoBuilder builder)
     {
@@ -23,6 +37,9 @@ public sealed class AzureBlobComposer : IComposer
                 options.ConnectionString = azureBlobOptions.ConnectionString;
                 options.ContainerName = azureBlobOptions.ContainerName;
             });
+
+            // Invoke delegate to configure additional services
+            Configure?.Invoke(azureBlobOptions);
         }
     }
 
@@ -33,7 +50,7 @@ public sealed class AzureBlobComposer : IComposer
     /// <returns>
     ///   <c>true</c> if the environment variables contains valid Azure Blob Storage options; otherwise, <c>false</c>.
     /// </returns>
-    internal static bool TryGetOptions([MaybeNullWhen(false)] out AzureBlobOptions options)
+    private static bool TryGetOptions([MaybeNullWhen(false)] out AzureBlobOptions options)
     {
         IConfigurationRoot configuration = new ConfigurationBuilder()
             .AddEnvironmentVariables("Umbraco:Cloud:")
@@ -49,6 +66,7 @@ public sealed class AzureBlobComposer : IComposer
         ValidateOptionsResult validateResult = new DataAnnotationValidateOptions<AzureBlobOptions>(null).Validate(null, options);
         if (validateResult.Failed)
         {
+            options = null;
             return false;
         }
 

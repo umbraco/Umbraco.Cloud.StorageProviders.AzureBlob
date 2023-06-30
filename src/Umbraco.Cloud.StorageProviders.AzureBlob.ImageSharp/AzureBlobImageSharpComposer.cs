@@ -7,16 +7,11 @@ namespace Umbraco.Cloud.StorageProviders.AzureBlob.ImageSharp;
 /// Automatically configures ImageSharp support using the Azure Blob Storage for use on Umbraco Cloud.
 /// </summary>
 /// <seealso cref="Umbraco.Cms.Core.Composing.IComposer" />
-[ComposeAfter(typeof(AzureBlobComposer))]
+[ComposeBefore(typeof(AzureBlobComposer))]
 public sealed class AzureBlobImageSharpComposer : IComposer
 {
     /// <inheritdoc />
     public void Compose(IUmbracoBuilder builder)
-    {
         // Configure ImageSharp support using Azure Blob Storage
-        if (AzureBlobComposer.TryGetOptions(out _))
-        {
-            builder.AddAzureBlobImageSharpCache();
-        }
-    }
+        => AzureBlobComposer.Configure += options => builder.AddAzureBlobImageSharpCache();
 }
