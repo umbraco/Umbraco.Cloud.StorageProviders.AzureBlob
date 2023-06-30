@@ -1,21 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Title>Umbraco Cloud Storage Providers - Azure Blob Storage</Title>
-    <Description>Azure Blob Storage provider for Umbraco Cloud with all default dependencies.</Description>
+    <Description>Azure Blob Storage provider for Umbraco Cloud.</Description>
     <PackageTags>umbraco cloud storage azure blob</PackageTags>
-    <IncludeBuildOutput>false</IncludeBuildOutput>
-    <IncludeSymbols>false</IncludeSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Umbraco.Cloud.StorageProviders.AzureBlob.Core\Umbraco.Cloud.StorageProviders.AzureBlob.Core.csproj" />
-    <ProjectReference Include="..\Umbraco.Cloud.StorageProviders.AzureBlob.ImageSharp\Umbraco.Cloud.StorageProviders.AzureBlob.ImageSharp.csproj" />
+    <PackageReference Include="Umbraco.StorageProviders.AzureBlob" />
   </ItemGroup>
-  
-  <!-- Create and pack empty file to add TFM dependency -->
-  <Target Name="GetTargetFrameworkPackageFiles" BeforeTargets="GenerateNuspec">
-    <WriteLinesToFile File="$(IntermediateOutputPath)_._" />
-    <ItemGroup>
-      <_PackageFiles Include="$(IntermediateOutputPath)_._" PackagePath="lib\$(TargetFramework)" />
-    </ItemGroup>
-  </Target>
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>Umbraco.Cloud.StorageProviders.AzureBlob.ImageSharp</_Parameter1>
+    </AssemblyAttribute>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>Umbraco.Cloud.StorageProviders.AzureBlob.ImageSharp2</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
 </Project>

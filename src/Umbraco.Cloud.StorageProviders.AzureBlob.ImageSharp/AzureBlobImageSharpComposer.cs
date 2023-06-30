@@ -1,4 +1,3 @@
-using Umbraco.Cloud.StorageProviders.AzureBlob.Core;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 

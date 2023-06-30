@@ -6,6 +6,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Umbraco.StorageProviders.AzureBlob.ImageSharp" />
-    <ProjectReference Include="..\Umbraco.Cloud.StorageProviders.AzureBlob.Core\Umbraco.Cloud.StorageProviders.AzureBlob.Core.csproj" />
+    <ProjectReference Include="..\Umbraco.Cloud.StorageProviders.AzureBlob\Umbraco.Cloud.StorageProviders.AzureBlob.csproj" />
   </ItemGroup>
 </Project>

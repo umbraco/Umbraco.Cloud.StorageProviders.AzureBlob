@@ -15,5 +15,6 @@
   <ItemGroup>
     <PackageVersion Include="Umbraco.StorageProviders.AzureBlob" Version="$(UmbracoCmsPackageVersion)" />
     <PackageVersion Include="Umbraco.StorageProviders.AzureBlob.ImageSharp" Version="$(UmbracoCmsPackageVersion)" />
+    <PackageVersion Include="Umbraco.StorageProviders.AzureBlob.ImageSharp2" Version="$(UmbracoCmsPackageVersion)" />
   </ItemGroup>
 </Project>

@@ -2365,7 +2365,7 @@
           "Umbraco.Cms.Web.Common": "[12.0.0, 13.0.0)"
         }
       },
-      "umbraco.cloud.storageproviders.azureblob.core": {
+      "umbraco.cloud.storageproviders.azureblob": {
         "type": "Project",
         "dependencies": {
           "Umbraco.StorageProviders.AzureBlob": "[12.0.0, 13.0.0)"
