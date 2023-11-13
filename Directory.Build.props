@@ -6,7 +6,7 @@
     <Copyright>Copyright © Umbraco $([System.DateTime]::Today.ToString('yyyy'))</Copyright>
     <Product>Umbraco Cloud Storage Providers</Product>
     <PackageProjectUrl>https://github.com/umbraco/Umbraco.Cloud.StorageProviders.AzureBlob</PackageProjectUrl>
-    <PackageIconUrl>https://umbraco.com/dist/nuget/logo-small.png</PackageIconUrl>
+    <PackageIconUrl>https://github.com/umbraco/Umbraco.Cloud.StorageProviders.AzureBlob/raw/develop/icon.png</PackageIconUrl>
     <PackageIcon>icon.png</PackageIcon>
     <PackageTags>umbraco cloud storage</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
