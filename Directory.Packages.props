@@ -10,10 +10,10 @@
     <GlobalPackageReference Include="Umbraco.GitVersioning.Extensions" Version="0.2.0" />
   </ItemGroup>
   <PropertyGroup>
-    <UmbracoCmsPackageVersion>[12.0.0, 13)</UmbracoCmsPackageVersion>
+    <UmbracoStorageProvidersPackageVersion>[12.0.1, 13)</UmbracoStorageProvidersPackageVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Umbraco.StorageProviders.AzureBlob" Version="$(UmbracoCmsPackageVersion)" />
-    <PackageVersion Include="Umbraco.StorageProviders.AzureBlob.ImageSharp" Version="$(UmbracoCmsPackageVersion)" />
+    <PackageVersion Include="Umbraco.StorageProviders.AzureBlob" Version="$(UmbracoStorageProvidersPackageVersion)" />
+    <PackageVersion Include="Umbraco.StorageProviders.AzureBlob.ImageSharp" Version="$(UmbracoStorageProvidersPackageVersion)" />
   </ItemGroup>
 </Project>
