@@ -9,7 +9,7 @@
     <GlobalPackageReference Include="Umbraco.GitVersioning.Extensions" Version="0.2.0" />
   </ItemGroup>
   <PropertyGroup>
-    <UmbracoStorageProvidersPackageVersion>[17.0.0-rc3, 18)</UmbracoStorageProvidersPackageVersion>
+    <UmbracoStorageProvidersPackageVersion>[17.0.0-rc4, 18)</UmbracoStorageProvidersPackageVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="Umbraco.StorageProviders.AzureBlob" Version="$(UmbracoStorageProvidersPackageVersion)" />
