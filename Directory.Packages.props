@@ -3,12 +3,12 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
-    <GlobalPackageReference Include="Nerdbank.GitVersioning" Version="3.9.50" />
+    <GlobalPackageReference Include="Nerdbank.GitVersioning" Version="3.10.85" />
     <GlobalPackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.556" />
     <GlobalPackageReference Include="Umbraco.GitVersioning.Extensions" Version="0.2.0" />
   </ItemGroup>
   <PropertyGroup>
-    <UmbracoStorageProvidersPackageVersion>[18.0.0-rc2, 19)</UmbracoStorageProvidersPackageVersion>
+    <UmbracoStorageProvidersPackageVersion>[18.0.0-rc3, 19)</UmbracoStorageProvidersPackageVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="Umbraco.StorageProviders.AzureBlob" Version="$(UmbracoStorageProvidersPackageVersion)" />
